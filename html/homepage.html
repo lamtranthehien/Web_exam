@@ -28,6 +28,13 @@
             text-decoration: none;
             color: white;
             font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            align-items: center;
+        }
+        span{
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
         }
         #links:hover{
             color: aqua;
@@ -35,12 +42,16 @@
         section{
             background-color: black;
         }
+        #header-info{
+            display: flex;
+            gap: -100px;
+        }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding: 0;">
         <div class="row" id="header">
-           <div class="d-flex justify-content-between align-items-center w-100">
+           <div class="d-flex justify-content-between align-items-center w-100" id="header-info">
             <a href="#"><img 
              src="../img/logo.png" 
              alt="logo"
@@ -49,16 +60,17 @@
             <a href="#" id="links">Home</a>
             <a href="#" id="links">Shop</a> 
             <a href="#" id="links">About</a>
-             
-             <div class="auth-links">
-                 <input type="text" class="border-dark" style="border-radius: 10px;width: 500px;" placeholder="Searching the books">
-                 <span class="material-symbols-outlined">
-                    search
-                    </span>
-                <a href="#" id="login" data-bs-toggle="modal" data-bs-target="#login_modal">Đăng nhập/</a><a href="#" id="register" data-bs-toggle="modal" data-bs-target="#register_modal">Đăng kí</a>
-                <span class="material-symbols-outlined">
-                    shopping_cart
-                    </span>
+             <div class="auth-links d-flex">
+                <div class="input-group search-bar w-75" >
+                    <input type="text" class="form-control search-input" placeholder="Searching the books">
+                    <button class="btn btn-search" style="background-color: blue;"><i class="material-symbols-outlined">search</i></button>
+                 </div>
+                <a href="#" id="login" data-bs-toggle="modal" data-bs-target="#login_modal">Login/</a><a href="#" id="register" data-bs-toggle="modal" data-bs-target="#register_modal">Register</a>
+                <a href="#">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                        </span>
+                </a>
              </div>
            </div>
         </div>
@@ -87,13 +99,39 @@
                         <input type="text" style="width:70%;">
                         <br>
                         <h5 style="width: 30%;margin-left:-160px;">Mật khẩu</h5>
-                        <input type="text" style="width:70%;">
+                        <input type="password" style="width:70%;">
                 </div>
-                <div class="footer d-flex justify-content-center align-content-center">
+                <div class="footer d-flex justify-content-center align-content-center   ">
                     <button type="button" class="btn btn-success">Đăng nhập</button>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal" id="register_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">Đăng kí</div>
+                    <button type="button" data-bs-dismiss="modal" class="btn-close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center flex-column align-items-center">
+                        <h5 style="width: 30%;margin-left:-190px;" >Tên đăng nhập</h5>
+                        <input type="text" style="width:70%;"id="username">
+                        <h5 style="width: 30%;margin-left:-190px;">Mật khẩu</h5>
+                        <input type="password" style="width:70%;">
+                        <h5 style="width: 30%;margin-left:-190px;">Email</h5>
+                        <input type="text" style="width:70%;">
+                        <h5 style="width: 30%;margin-left:-190px;">Số điện thoại</h5>
+                        <input type="text" style="width:70%;">
+                </div>
+                <div class="footer d-flex justify-content-center align-content-center   ">
+                    <button type="button" class="btn btn-success">Tạo Tài Khoản</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+    </script>
 </body>
 </html>
